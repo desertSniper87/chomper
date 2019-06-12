@@ -2,7 +2,7 @@
 # GNU General Public License v3.0+ (see COPYING or https://www.gnu.org/licenses/gpl-3.0.txt)
 
 .PHONY: lock reset
-SHELL:=/bin/bash
+SHELL:=/usr/bin/env bash
 INTERPRETER=$(shell pipenv --py)
 CURRENT_USER:=$(shell whoami)
 CURRENT_DIR:=$(shell pwd)
@@ -20,4 +20,4 @@ lock:
 	sudo chown -R $(CURRENT_USER):$(CURRENT_USER) ./.git
 
 reset:
-	sudo env PATH=$(PATH):/usr/sbin:/sbin ${INTERPRETER}3.6m ${CURRENT_DIR}/chomper/reset.py
+	sudo env PATH=$(PATH):/usr/sbin:/sbin ${INTERPRETER}3.7 ${CURRENT_DIR}/chomper/reset.py
